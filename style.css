@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    
+    background-image: url('img/bgblue.png');
+    background-size: auto; /* Adjusts the size of thebackground image to cover the entire container */
+    background-position: cover; /* Centers the backgroundimage */
+    background-repeat: no-repeat; /* Prevents thebackgroundimage from repeating */
+    overflow: hidden;
+    height: 100vh;
+}
+.logoH{
+    width: 30rem;
+    
+}
+.container {
+    margin-top: 50px;
+    background-color: rgba(189, 189, 189, 0.404); 
+    box-shadow: 0 0 25px rgba(236, 236, 236, 0.5);
+    border-radius: 10px;
+    height: auto;
+    animation: glow 1.5s infinite alternate ease-in-out;
+    
+}
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+    }
+}
+
+
+
+.header-h1 {
+    color: transparent;
+    background: #777777;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+}
+textarea {
+    overflow: scroll;
+    resize: none;
+    margin-bottom: 10px;
+}
+.col-md-6 {
+    height: 500px;
+}
+#input-file {
+    color: #0069D9;
+    cursor: pointer;
+}
+#shuffle{
+    display: block;
+    width: 100%;
+}
+.shuffle-area{
+    box-sizing: border-box;
+}
+.form-check-input{
+    margin-left: 5px;
+}
+.form-check-label{
+    margin-left: 25px;
+}
+.reset{
+    float: right;
+    background-color: #218838;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+.reset:hover{
+    background-color: #1eb940;
+}
+.col-md-6 ul li strong span{
+   font-size: 20px;
+}
+.display{
+    padding: 30px;
+} 
+input[type=checkbox] {
+    filter: hue-rotate(240deg) ;
+    cursor: pointer;
+  }
+.input-ready{
+    margin-top: 20px;
+}
+
+
+@media only screen and (max-width: 340px) {
+
+    #reset{
+        width: 100%;
+        font-size: 14px;
+    }
+    .header-h1{
+        font-size: 35px;
+    }
+    .col-md-6 ul li strong span{
+        font-size: 18px;
+     }
+     .form-check-label{
+         margin-bottom: 10px;
+     }
+  }
+
+
+
