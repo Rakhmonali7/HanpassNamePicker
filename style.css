@@ -4,13 +4,15 @@
     box-sizing: border-box;
 }
 body {
-    
-    background-image: url('img/bgblue.png');
-    background-size: auto; /* Adjusts the size of thebackground image to cover the entire container */
-    background-position: cover; /* Centers the backgroundimage */
-    background-repeat: no-repeat; /* Prevents thebackgroundimage from repeating */
-    overflow: hidden;
     height: 100vh;
+    width: 100%;
+    background-image: url('img/bgblue.png');
+    background-size: auto; 
+    background-position: cover; 
+    background-repeat: no-repeat;
+    overflow: hidden;
+    
+    
 }
 .logoH{
     width: 30rem;
