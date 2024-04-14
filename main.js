@@ -9,8 +9,23 @@ const reset = document.getElementById('reset')
 const inputFile = document.getElementById('input-file')
 const checkbox = document.getElementById('checkbox')
 const ready = document.getElementById('ready')
-
+const label = document.querySelector('.form-check-label')
 let participantNames = []
+
+
+//test
+const jsConfetti = new JSConfetti();
+let confettiActive = false;
+//test
+
+checkbox.addEventListener('change', function() {
+    // Check if the checkbox is checked
+    if (checkbox.checked) {
+        label.style.color = '#1eb940'; // Change color of h1 to red
+    } else {
+        label.style.color = '#fff'; // Change color of h1 back to default (black)
+    }
+  });
 
 ready.addEventListener('click', function (event) {
     if (input.value === '') {
@@ -32,7 +47,7 @@ shuffle.addEventListener('click', function (event) {
     } else {
         let suffledNames = shuffleArray(participantNames)
 
-        let totalTime = 15000; // Total time in milliseconds
+        let totalTime = 8000; // Total time in milliseconds
         let delay = totalTime / suffledNames.length;
 
         for (let i = 1; i < suffledNames.length; i++) {
@@ -47,6 +62,7 @@ shuffle.addEventListener('click', function (event) {
                             if (checkbox.checked == true) {
                                 let index = participantNames.indexOf(suffledNames[rand])
                                 participantNames.splice(index, 1)
+                                
                             }
                             console.log(participantNames)
                             winnerAlert(suffledNames[rand])
@@ -56,6 +72,7 @@ shuffle.addEventListener('click', function (event) {
                             if (checkbox.checked == true) {
                                 let index = participantNames.indexOf(suffledNames[rand])
                                 participantNames.splice(index, 1)
+                                
                             }
                             console.log(participantNames)
                             winnerAlert(suffledNames[rand])
@@ -65,6 +82,7 @@ shuffle.addEventListener('click', function (event) {
                             if (checkbox.checked == true) {
                                 let index = participantNames.indexOf(suffledNames[rand])
                                 participantNames.splice(index, 1)
+                                
                             }
                             console.log(participantNames)
                             shuffle.setAttribute("disabled", true);
@@ -106,6 +124,7 @@ reset.addEventListener('click', function (event) {
     ready.removeAttribute('disabled')
     input.removeAttribute('disabled')
     checkbox.checked = false
+    label.style.color = '#fff'
     participantNames.length = 0
 
 })
@@ -127,10 +146,52 @@ function winnerAlert(name) {
         position: 'center',
         icon: 'success',
         title: 'Congratulations',
-        text: `'${name}'`,
+        text: `${name}`,
         showConfirmButton: true,
         timer: 15000
-    })
+    }).then(() => {
+        if (!confettiActive) { // Check if confetti animation is not active
+            startConfetti();
+            confettiActive = false; // Start confetti animation
+        } 
+    });
 }
 
+//test
+function startConfetti() {
+    jsConfetti.addConfetti({
+        emojis: ['🎈', '🎁', '💥', '✨', '💫', '🌸','🎈', '🎉'],
+    });
+    confettiActive = true; // Set flag to indicate confetti animation is active
+}
 
+//test
+
+
+
+// po up 
+
+
+document.getElementById('openPopup').addEventListener('click', function() {
+    document.getElementById('popupWrapper').style.display = 'block';
+    setTimeout(function() {
+      document.getElementById('popupContent').classList.add('show');
+    }, 50);
+  });
+  
+  document.getElementById('closePopup').addEventListener('click', function() {
+    closePopup();
+  });
+  
+  document.getElementById('popupWrapper').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closePopup();
+    }
+  });
+  
+  function closePopup() {
+    document.getElementById('popupContent').classList.remove('show');
+    setTimeout(function() {
+      document.getElementById('popupWrapper').style.display = 'none';
+    }, 300);
+  }

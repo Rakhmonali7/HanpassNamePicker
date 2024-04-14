@@ -16,16 +16,14 @@ body {
 }
 .logoH{
     width: 30rem;
-    
 }
 .container {
-    margin-top: 50px;
     background-color: rgba(189, 189, 189, 0.404); 
     box-shadow: 0 0 25px rgba(236, 236, 236, 0.5);
     border-radius: 10px;
     height: auto;
     animation: glow 1.5s infinite alternate ease-in-out;
-    
+    padding: 30px;
 }
 @keyframes glow {
     0% {
@@ -49,11 +47,22 @@ body {
 }
 textarea {
     overflow: scroll;
+    max-width: 600px;
+    width: 100%;
     resize: none;
     margin-bottom: 10px;
 }
 .col-md-6 {
-    height: 500px;
+   max-width: 700px;
+   height:fit-content;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+}
+.setup{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 #input-file {
     color: #0069D9;
@@ -65,12 +74,19 @@ textarea {
 }
 .shuffle-area{
     box-sizing: border-box;
+    background: transparent;
+    border: none ;
+   
 }
 .form-check-input{
     margin-left: 5px;
+    width: 25px;
+    height: 25px;
 }
 .form-check-label{
-    margin-left: 25px;
+    margin-left: 35px;
+    font-size: 23px;
+    color: #fff;
 }
 .reset{
     float: right;
@@ -79,15 +95,39 @@ textarea {
     font-size: 12px;
     font-weight: bold;
 }
+
 .reset:hover{
     background-color: #1eb940;
 }
 .col-md-6 ul li strong span{
    font-size: 20px;
+   
 }
 .display{
+    width: 100%;
     padding: 30px;
+   background-color: rgba(244, 255, 255, 0.486);
 } 
+.list-group-item{
+    background: transparent;
+    border: none;
+}
+.winner-list{
+    font-size: 23px;
+    color: #fff;
+}
+#first-position{
+    font-size: 25px;
+    color: #FF407D;;
+}
+#second-position{
+    font-size: 25px;
+    color: #FF407D;
+}
+#third-position{
+    font-size: 25px;
+    color: #FF407D;
+}
 input[type=checkbox] {
     filter: hue-rotate(240deg) ;
     cursor: pointer;
@@ -95,6 +135,11 @@ input[type=checkbox] {
 .input-ready{
     margin-top: 20px;
 }
+.row{
+    display: flex;
+    justify-content: center;
+}
+
 
 
 @media only screen and (max-width: 340px) {
@@ -112,6 +157,62 @@ input[type=checkbox] {
      .form-check-label{
          margin-bottom: 10px;
      }
+  }
+
+
+
+ 
+  #openPopup{
+    margin: 2rem;
+  }
+  #popupWrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+
+  }
+ 
+  
+  #popupContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 50px 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 800px;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  .from-group{
+
+    width: 600px;
+}
+textarea.form-control{
+    width: 100%;
+    height: 14rem;
+}
+  
+  #popupContent.show {
+    opacity: 1;
+  }
+  
+  #closePopup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
   }
 
 

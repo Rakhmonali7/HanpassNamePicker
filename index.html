@@ -10,30 +10,42 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
+
+
+    <button id="openPopup" type="button" class="btn btn-outline-success">Set rules!</button>
+
+<div id="popupWrapper">
+  <div id="popupContent">
+    <button id="closePopup">&times;</button>
+    <div class="col-md-6 setup">
+        <div class="from-group mb-2">
+            <label for="inp" class="mt-2">ADD NAMES</label>
+            <textarea name="" id="input" class="form-control textarea-autosize" 
+                placeholder="Each name should be added separated by comma" >
+            </textarea>
+        </div>
+        <div class=" from-group card p-2 input-ready">
+            <input type="file" accept="text/plain" class="form-control-file" name="" id="input-file">
+            <button class="btn btn-primary text-uppercase font-weight-bold my-3" id="ready" type="button">
+                Ready
+            </button>
+        </div>
+    </div>
+
+  </div>
+</div>
+
 
     <div class="container">
         <header class="page-header text-center my-3">
             <img class="logoH" src="./img/hanpassLogo.png" alt="">
         </header>
         <div class="row">
-            <div class="col-md-6">
-                <div class="from-group mb-2">
-                    <label for="inp" class="mt-2">ADD NAMES</label>
-                    <textarea name="" id="input" class="form-control textarea-autosize" rows="10"
-                        placeholder="Each name should be added separated by comma"></textarea>
-                    <strong>Or</strong>
-                </div>
-                <div class=" from-group card p-2 input-ready">
-
-                    <input type="file" accept="text/plain" class="form-control-file" name="" id="input-file">
-                    <button class="btn btn-primary text-uppercase font-weight-bold my-3" id="ready" type="button">
-                        Ready
-                    </button>
-                </div>
-            </div>
+            
             <div class="col-md-6">
                 <label for="" class="mt-2">WINNERS LIST</label>
                 <div class="card card-body text-center display">
@@ -42,17 +54,17 @@
 
                 <ul class="list-group-item my-3">
                     <li class="list-group-item">
-                        <strong>
+                        <strong class="winner-list">
                             1st Winner: <span id="third-position"></span>
                         </strong>
                     </li>
                     <li class="list-group-item">
-                        <strong>
+                        <strong class="winner-list">
                             2nd Winner: <span id="second-position"></span>
                         </strong>
                     </li>
                     <li class="list-group-item">
-                        <strong>
+                        <strong class="winner-list">
                             3rd Winner: <span id="first-position"></span>
                         </strong>
                     </li>
@@ -60,8 +72,7 @@
                 <div class="card p-1 d-block shuffle-area">
                     <div class="form-group">
                         <input type="checkbox" class="form-check-input c9" name="" id="checkbox">
-                        <label for="checkbox" class="form-check-label" id="checkbox-label">Remove name after a
-                            Draw</label>
+                        <label for="checkbox" class="form-check-label" id="checkbox-label">Remove selected name</label>
                         <button class="btn btn-primary reset text-uppercase mb-2" id="reset">Reset</button>
                     </div>
                     <div class="form-group">
@@ -72,6 +83,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="main.js"></script>
 </body>
